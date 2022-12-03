@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
+import Counter from "./components/Counter";
+import ClassCounter from "./components/ClassCounter";
+import './styles/App.css'
+import Postitem from "./components/postitem";
+import Postlist from "./components/Postlist";
 
 function App() {
+    const [posts, setPosts] = useState([
+        {id:1, title: 'JavaSript 1', body: "Description"},
+        {id:2, title: 'JavaSript 2', body: "Description"},
+        {id:3, title: 'JavaSript 3', body: "Description"},
+    ])
+
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Postlist posts={posts} title="список постов 1"/>
     </div>
   );
 }
